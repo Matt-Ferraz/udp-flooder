@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34701.34
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "flooder", "flooder\flooder.vcxproj", "{455E2E2D-939B-47C0-A5A6-F305CF5DA21E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{455E2E2D-939B-47C0-A5A6-F305CF5DA21E}.Debug|x64.ActiveCfg = Debug|x64
+		{455E2E2D-939B-47C0-A5A6-F305CF5DA21E}.Debug|x64.Build.0 = Debug|x64
+		{455E2E2D-939B-47C0-A5A6-F305CF5DA21E}.Debug|x86.ActiveCfg = Debug|Win32
+		{455E2E2D-939B-47C0-A5A6-F305CF5DA21E}.Debug|x86.Build.0 = Debug|Win32
+		{455E2E2D-939B-47C0-A5A6-F305CF5DA21E}.Release|x64.ActiveCfg = Release|x64
+		{455E2E2D-939B-47C0-A5A6-F305CF5DA21E}.Release|x64.Build.0 = Release|x64
+		{455E2E2D-939B-47C0-A5A6-F305CF5DA21E}.Release|x86.ActiveCfg = Release|Win32
+		{455E2E2D-939B-47C0-A5A6-F305CF5DA21E}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1D5F904D-7DBB-47C6-97A9-D3F6CB3E307D}
+	EndGlobalSection
+EndGlobal
